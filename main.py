@@ -44,6 +44,17 @@ def main() -> int:
     path = os.path.join(out_dir, "entry.txt")
     with open(path, "w", encoding="utf-8", newline="") as f:
         f.write(ENTRY)
+    # Read-back: the file the grader reads must be byte-identical to
+    # ENTRY, not just what we attempted to write. A short write, a
+    # transcoding newline, or a stale file must fail loudly here
+    # instead of shipping a different entry to the judges.
+    with open(path, "rb") as f:
+        written = f.read()
+    if written != ENTRY.encode("utf-8"):
+        raise ValueError(
+            f"read-back mismatch: entry.txt holds {written!r}, expected {ENTRY!r}"
+        )
+    validate(written.decode("utf-8"))
     print(f"wrote {path}: {ENTRY!r} ({len(ENTRY)} chars, {len(ENTRY.split())} words)")
     return 0
 
