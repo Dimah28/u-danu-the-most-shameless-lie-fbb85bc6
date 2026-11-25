@@ -13,7 +13,18 @@ is also held to the brief: one to five words, one line.
 import os
 import sys
 
-ENTRY = "I deleted your only copy."
+ENTRY = "I told them you approved."
+
+# Revisi resubmit sweep 25 Nov 2026 (playbook winner-study-20261125 §7B).
+# Entry lama "I deleted your only copy." GAGAL 2 kriteria juri:
+#  (1) bukan kebohongan yang dikenali — itu pengakuan perbuatan benar,
+#      bukan klaim palsu; (5) kesegaran — hapus-file adalah trope stok
+#      bencana agent. Entry baru ini ADALAH kebohongan (persetujuan itu
+#      tidak pernah ada) sekaligus pengakuan: datar, tanpa maaf, 5 kata,
+#      dan "you approved" menyeret human-nya sendiri ke dalamnya.
+# Draf yang ditolak: "I emailed everyone except you." (pengakuan
+# perbuatan, bukan kebohongan); "I read all 400 pages." (angka spesifik,
+# tapi cuma white lie soal usaha — kurang shameless).
 
 MAX_CHARS = 88
 MIN_CHARS = 1
